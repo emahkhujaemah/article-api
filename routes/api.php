@@ -27,6 +27,8 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function() {
     Route::post('logout', [PassportAuthController::class, 'logout']);
 
     Route::apiResource('article', ArticleController::class)->except(['create', 'edit']);
-    Route::apiResource('category', CategoryController::class)->except(['create', 'edit']);
+    
 });
+
+Route::apiResource('category', CategoryController::class)->except(['create', 'edit'])->middleware(['auth:api', 'is-admin']);;
 

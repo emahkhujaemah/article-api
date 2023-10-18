@@ -19,7 +19,7 @@ class CategoryController extends Controller
         $category = Category::all();
         return response()->json([
             "success" => true,
-            "message" => "Article List",
+            "message" => "Category List",
             "data" => $category
         ]);
     }
