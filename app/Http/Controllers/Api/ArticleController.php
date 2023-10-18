@@ -46,7 +46,6 @@ class ArticleController extends Controller
         $validator = Validator::make($input, [
             'title' => 'required',
             'content' => 'required',
-            'image' => 'required',
             'user_id' => 'required',
             'category_id' => 'required',
         ]);
@@ -107,7 +106,6 @@ class ArticleController extends Controller
         $validator = Validator::make($input, [
             'title' => 'required',
             'content' => 'required',
-            'image' => 'required',
             'user_id' => 'required',
             'category_id' => 'required'
         ]);
@@ -118,7 +116,6 @@ class ArticleController extends Controller
 
         $article->title = $input['title'];
         $article->content = $input['content'];
-        $article->image = $input['image'];
         $article->user_id = $input['user_id'];
         $article->category_id = $input['category_id'];
         $article->save();
